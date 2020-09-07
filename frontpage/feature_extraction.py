@@ -4,7 +4,6 @@ import urllib.request
 from bs4 import BeautifulSoup
 import socket
 import requests
-import google
 from googlesearch import search 
 import whois
 
