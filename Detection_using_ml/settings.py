@@ -69,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Detection_using_ml.wsgi.application'
-APPEND_SLASH=False
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
