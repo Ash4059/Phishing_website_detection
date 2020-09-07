@@ -40,3 +40,4 @@ whois==0.9.7
 win-inet-pton==1.1.0
 wincertstore==0.2
 wrapt==1.12.1
+requests==2.24.0
