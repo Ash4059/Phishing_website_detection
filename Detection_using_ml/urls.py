@@ -19,6 +19,6 @@ from django.conf.urls import url
 from frontpage import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^$',views.index,name='HomePage'),
+    url('',views.index,name='HomePage'),
     url('detect_website' ,views.detect_website ,name='detect_website')
 ]
