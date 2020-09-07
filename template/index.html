@@ -21,11 +21,11 @@
 </head>
 
 <body>
-    <form method="POST" action="detect_website">
+    <form method="POST" action="/detectWebsite">
         {% csrf_token %}
         <label for="url">Enter an https:// URL:</label>
 
-        <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+        <input type="url" name="url" id="url" placeholder="https://example.com" size="100" required>
         <input type="submit" value="Submit" />
     </form>
 </body>
