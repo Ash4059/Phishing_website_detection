@@ -1,1 +1,1 @@
-web : gunicorn Detection_using_ml.wsgi --log-file -
+web: gunicorn Detection_using_ml.wsgi --log-file -
