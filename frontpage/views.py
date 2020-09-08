@@ -3,11 +3,9 @@ from django.http import HttpResponse
 from . import feature_extraction
 import joblib
 import numpy as np
-import sys, os
-sys.path.append(os.path.abspath(os.path.join('..', 'model')))
 # Create your views here.
 url=""
-model_reload=joblib.load('model.Phishing_website_detection.pkl')
+model_reload=joblib.load('./model/Phishing_website_detection.pkl')
 def index(request):
     return render(request,'index.html')
 def detectWebsite(request):
