@@ -44,15 +44,7 @@ def generate_data_set(url):
         whois_response = whois.whois(domain)
     except:
         return "Our server is not able to check legitimacy of website"
-    rank_checker_response = requests.post("https://www.checkpagerank.net/index.php", {
-        "name": domain
-    })
-
-    # Extracts global rank of the website
-    try:
-        global_rank = int(re.findall(r"Global Rank: ([0-9]+)", rank_checker_response.text)[0])
-    except:
-        global_rank = -1
+   
 
     # 1.having_IP_Address
     try:
@@ -384,12 +376,12 @@ def generate_data_set(url):
 
     #27. Page_Rank
     try:
-        if global_rank > 0 and global_rank < 100000:
-            data_set.append(-1)
-        else:
+        if registration_length>=365:
             data_set.append(1)
+        else:
+            data_set.append(-1)
     except:
-        data_set.append(1)
+        data_set.append(-1)
 
     #28. Google_Index
     site=search(url, 5)
