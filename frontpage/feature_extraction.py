@@ -265,16 +265,16 @@ def generate_data_set(url):
            data_set.append(-1)
 
         #16. SFH
-	for form in soup.find_all('form', action= True):
-	   if form['action'] =="" or form['action'] == "about:blank" :
-	      data_set.append(-1)
-	      break
-	   elif url not in form['action'] and domain not in form['action']:
-	       data_set.append(0)
-	       break
-	   else:
-		 data_set.append(1)
-		 break
+        for form in soup.find_all('form', action= True):
+           if form['action'] =="" or form['action'] == "about:blank" :
+              data_set.append(-1)
+              break
+           elif url not in form['action'] and domain not in form['action']:
+               data_set.append(0)
+               break
+           else:
+                 data_set.append(1)
+                 break
 
     if(len(data_set)!=16):
         data_set.append(-1)
