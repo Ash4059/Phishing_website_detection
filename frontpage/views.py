@@ -4,8 +4,7 @@ from . import feature_extraction
 import joblib
 import numpy as np
 # Create your views here.
-url=""
-model_reload=joblib.load('./model/phishing_website_detection.pkl')
+model_reload=joblib.load('./model/Phishing_website_detection.pkl')
 def index(request):
     return render(request,'index.html')
 def detectWebsite(request):
@@ -16,11 +15,9 @@ def detectWebsite(request):
     try:
         prediction = model_reload.predict(X_new)
         if prediction == -1:
-            result = "this is a Phishing Url"
+            result = "this is a Phishing Url and prediction is equal to -1"
         else:
             result = "this is Legitimate Url"
     except:
-        result = "this is Phishing Url"
+        result = "this is Phishing Url and not able to load module"
     return render(request,'result.html',{'result':result})
-            
-        
