@@ -20,7 +20,7 @@ def detectWebsite(request):
         else:
             result = "this is Legitimate Url"
     except:
-        result = "this is Phishing Url"
+        result = "this is Phishing Url and not able to load module"
     return render(request,'result.html',{'result':result})
             
         
