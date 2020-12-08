@@ -21,6 +21,6 @@ def detectWebsite(request):
             result = "this is Legitimate Url"
     except:
         result = "this is Phishing Url"
-    return render(request,'result.html',{'result':result,'data':X_new})
+    return render(request,'result.html',{'result':result,'X_new':X_new})
             
         
