@@ -4,7 +4,7 @@ from . import feature_extraction
 import joblib
 import numpy as np
 # Create your views here.
-model_reload=joblib.load('./model/Phishing_website_detection.pkl')
+model_reload=joblib.load('./model/phishing_website_detection.pkl')
 def index(request):
     return render(request,'index.html')
 def detectWebsite(request):
