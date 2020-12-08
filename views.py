@@ -16,11 +16,11 @@ def detectWebsite(request):
     try:
         prediction = model_reload.predict(X_new)
         if prediction == -1:
-            result = "this is a Phishing Url"
+            result = "this is a Phishing Url"+str(X_new)
         else:
             result = "this is Legitimate Url"
     except:
         result = "this is Phishing Url"
-    return render(request,'result.html',{'result':result+str(X_new)})
+    return render(request,'result.html',{'result':result})
             
         
