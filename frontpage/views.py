@@ -18,6 +18,6 @@ def detectWebsite(request):
             result = "this is a Phishing Url and prediction is equal to -1"
         else:
             result = "this is Legitimate Url"
-    except(e):
-        result = "this is Phishing Url and not able to load module"+str(e)
-    return render(request,'result.html',{'result':result})
+    except:
+        result = "this is Phishing Url and not able to load module"
+    return render(request,'result.html',{'result':result,'data':X_new})
