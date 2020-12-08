@@ -12,7 +12,6 @@ def detectWebsite(request):
     if(request.method=="POST"):
         url=request.POST.get('url')
     X_new=feature_extraction.generate_data_set(url)
-    print(X_new)
     X_new = np.array(X_new).reshape(1,-1)
     try:
         prediction = model_reload.predict(X_new)
@@ -22,6 +21,6 @@ def detectWebsite(request):
             result = "this is Legitimate Url"
     except:
         result = "this is Phishing Url"
-    return render(request,'result.html',{'result':result})
+    return render(request,'result.html',{'result':result,'data':X_new})
             
         
